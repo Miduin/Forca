@@ -45,6 +45,7 @@ int main() {
                 sc[a] = lt[0];
                 ac++;
             }
+            
         }
 
         if (!exists) {
