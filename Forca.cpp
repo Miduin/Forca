@@ -26,7 +26,7 @@ int main() {
         sc[a] = '_';
     }
 
-    while ((cc > 0) && (ac < sz)) {
+    while (cc > 0 && ac < sz) {
         cout << "jogadas restantes: " << cc << "\n\n";
         cout << "Palavra sec.: ";
 
@@ -40,12 +40,11 @@ int main() {
         bool exists = false;
 
         for (a = 0; a < sz; a++) {
-            if (pl[a] == lt[0]) {
+            if (pl[a] == lt[0] && sc[a] == '_') {
                 exists = true;
                 sc[a] = lt[0];
                 ac++;
             }
-            
         }
 
         if (!exists) {
