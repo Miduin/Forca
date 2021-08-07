@@ -1,6 +1,12 @@
 #include <iostream>
 #include <stdlib.h>
 
+#ifdef WIN32
+#define CLEAR_COMMAND "cls"
+#else
+#define CLEAR_COMMAND "clear"
+#endif
+
 using namespace std;
 
 int main() {
@@ -14,7 +20,7 @@ int main() {
          << "peca para alguem digitar uma palavra para voce descobrir...\n";
     cin >> pl;
 
-    system("cls");
+    system(CLEAR_COMMAND);
 
     cout << "\nvamos dar inicio!\n";
     while (pl[a] != '\0') {
@@ -51,7 +57,7 @@ int main() {
             cc--;
         }
 
-        system ("cls");
+        system(CLEAR_COMMAND);
     }
 
     if (ac == sz) {
