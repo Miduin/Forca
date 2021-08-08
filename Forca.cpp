@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
+#include "lib/body.h"
 
 #ifdef WIN32
 #define CLEAR_COMMAND "cls"
@@ -7,11 +8,13 @@
 #define CLEAR_COMMAND "clear"
 #endif
 
+#define MAX_LIFE 6
+
 using namespace std;
 
 int main() {
     char pl[25], lt[1], sc[25];
-    int cc = 4;
+    int cc = MAX_LIFE;
     int sz = 0;
     int a = 0;
     int ac = 0;
@@ -27,6 +30,8 @@ int main() {
         a++;
         sz++;
     }
+
+    print_body();
 
     for (a = 0; a < sz; a++) {
         sc[a] = '_';
@@ -54,10 +59,12 @@ int main() {
         }
 
         if (!exists) {
+            remove_part();
             cc--;
         }
 
         system(CLEAR_COMMAND);
+        print_body();
     }
 
     if (ac == sz) {
